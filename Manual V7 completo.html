@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Identidad de Marca y Operación · Club del Pollito de Hermes V7.0</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #090b0e;
+            --bg-card: #13161f;
+            --bg-card-hover: #1a1e2b;
+            --bg-sidebar: #0f1118;
+            --accent-red: #d71920;
+            --accent-red-glow: rgba(215, 25, 32, 0.4);
+            --accent-gold: #f5a623;
+            --accent-gold-glow: rgba(245, 166, 35, 0.3);
+            --accent-green: #10b981;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --text-dim: #6b7280;
+            --border-color: #232734;
+            --sidebar-width: 320px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a2e3d;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-red);
+        }
+
+        /* Sidebar Styles */
+        #sidebar {
+            width: var(--sidebar-width);
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            z-index: 100;
+            flex-shrink: 0;
+        }
+
+        #sidebar.collapsed {
+            margin-left: calc(-1 * var(--sidebar-width));
+        }
+
+        .sidebar-header {
+            padding: 24px 20px;
+            border-bottom: 1px solid var(--border-color);
+            background: linear-gradient(135deg, rgba(215, 25, 32, 0.22) 0%, rgba(15, 17, 24, 0.95) 100%);
+            position: relative;
+        }
+
+        .sidebar-header .brand-tag {
+            font-size: 0.68rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-gold);
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .sidebar-header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.25;
+            letter-spacing: 0.3px;
+        }
+
+        .sidebar-header p {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            margin-top: 6px;
+            font-weight: 600;
+        }
+
+        .search-box {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-dark);
+            color: #fff;
+            font-family: inherit;
+            font-size: 0.85rem;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-red);
+            box-shadow: 0 0 10px var(--accent-red-glow);
+        }
+
+        .nav-sections {
+            flex: 1;
+            overflow-y: auto;
+            padding: 12px;
+        }
+
+        .module-group {
+            margin-bottom: 16px;
+        }
+
+        .module-title {
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-gold);
+            padding: 8px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            border-radius: 4px;
+            user-select: none;
+        }
+
+        .module-title:hover {
+            background-color: rgba(255, 255, 255, 0.04);
+        }
+
+        .nav-item {
+            padding: 9px 12px;
+            margin-bottom: 3px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .nav-item:hover {
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-item.active {
+            color: #ffffff;
+            background-color: rgba(215, 25, 32, 0.2);
+            border-left: 3px solid var(--accent-red);
+        }
+
+        .nav-num {
+            font-size: 0.7rem;
+            font-weight: 800;
+            background-color: var(--bg-card);
+            color: var(--accent-gold);
+            padding: 2px 6px;
+            border-radius: 4px;
+            min-width: 26px;
+            text-align: center;
+        }
+
+        /* Main Workspace */
+        #main-workspace {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+            background-color: var(--bg-dark);
+        }
+
+        /* Top Header Toolbar */
+        .top-bar {
+            height: 64px;
+            background-color: var(--bg-sidebar);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            gap: 16px;
+            z-index: 10;
+        }
+
+        .top-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .btn-toggle-sidebar {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: #fff;
+            width: 38px;
+            height: 38px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.2s;
+        }
+
+        .btn-toggle-sidebar:hover {
+            background-color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+
+        .top-title {
+            font-size: 1rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 0.3px;
+        }
+
+        .action-btns {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-action {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.82rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-action:hover {
+            background-color: rgba(255, 255, 255, 0.08);
+            border-color: #444;
+        }
+
+        .btn-action-primary {
+            background: linear-gradient(135deg, var(--accent-red) 0%, #a81016 100%);
+            border-color: var(--accent-red);
+            box-shadow: 0 4px 12px var(--accent-red-glow);
+        }
+
+        .btn-action-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px var(--accent-red-glow);
+        }
+
+        /* Content Container */
+        .content-scroll-area {
+            flex: 1;
+            overflow-y: auto;
+            padding: 32px 40px;
+            scroll-behavior: smooth;
+        }
+
+        .container-max {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Banner Hero */
+        .hero-banner {
+            background: linear-gradient(135deg, rgba(215, 25, 32, 0.18) 0%, rgba(245, 166, 35, 0.08) 50%, rgba(19, 22, 31, 0.95) 100%);
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--accent-red);
+            border-radius: 14px;
+            padding: 32px 36px;
+            margin-bottom: 36px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        .hero-banner::after {
+            content: 'V7.0';
+            position: absolute;
+            right: -20px;
+            bottom: -30px;
+            font-size: 10rem;
+            font-weight: 900;
+            color: rgba(255,255,255,0.02);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: var(--accent-red);
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .hero-banner h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .hero-banner p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            max-width: 850px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Metric KPI Cards Grid */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .kpi-card {
+            background-color: rgba(19, 22, 31, 0.8);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 18px 20px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-gold);
+        }
+
+        .kpi-val {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--accent-gold);
+        }
+
+        .kpi-lbl {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-top: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Section Block Cards */
+        .section-block {
+            margin-bottom: 32px;
+            scroll-margin-top: 20px;
+        }
+
+        .section-header-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .section-header-title .tag-num {
+            background-color: var(--accent-red);
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        /* Expandable Accordion Card (`.card-acc`) */
+        .card-acc {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        }
+
+        .card-acc:hover {
+            border-color: #383e52;
+            background-color: var(--bg-card-hover);
+        }
+
+        .card-acc-header {
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .card-acc-header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .card-acc-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background-color: rgba(245, 166, 35, 0.12);
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .card-acc-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .card-acc-subtitle {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 3px;
+        }
+
+        .card-acc-arrow {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            transition: transform 0.3s ease;
+        }
+
+        .card-acc.expanded .card-acc-arrow {
+            transform: rotate(180deg);
+            background-color: var(--accent-red);
+            color: #fff;
+        }
+
+        .card-acc-body {
+            padding: 0 24px 24px 24px;
+            border-top: 1px solid transparent;
+            display: none;
+            line-height: 1.65;
+            color: #d1d5db;
+            font-size: 0.92rem;
+        }
+
+        .card-acc.expanded .card-acc-body {
+            display: block;
+            border-top-color: var(--border-color);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Rich Content Formatting */
+        .text-lead {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #f9fafb;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .rule-box {
+            background: linear-gradient(135deg, rgba(215,25,32,0.15) 0%, rgba(215,25,32,0.05) 100%);
+            border-left: 4px solid var(--accent-red);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 16px 0;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .rule-box-gold {
+            background: linear-gradient(135deg, rgba(245,166,35,0.15) 0%, rgba(245,166,35,0.05) 100%);
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 16px 0;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        /* Custom Tables */
+        .data-table-wrapper {
+            overflow-x: auto;
+            margin: 16px 0;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+            text-align: left;
+        }
+
+        .data-table th {
+            background-color: #1a1e2b;
+            color: var(--accent-gold);
+            padding: 12px 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .data-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+            color: #e5e7eb;
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .data-table tr:hover td {
+            background-color: rgba(255,255,255,0.02);
+        }
+
+        /* Carousels */
+        .carousel-container {
+            position: relative;
+            margin: 20px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #0c0e14;
+            border: 1px solid var(--border-color);
+        }
+
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            padding: 24px 28px;
+            box-sizing: border-box;
+        }
+
+        .carousel-controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+            background-color: #12151d;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .carousel-btn {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.8rem;
+            transition: all 0.2s;
+        }
+
+        .carousel-btn:hover {
+            background-color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+
+        .carousel-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #333;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .dot.active {
+            background-color: var(--accent-gold);
+            width: 20px;
+            border-radius: 4px;
+        }
+
+        /* Tab Switchers */
+        .tab-wrapper {
+            margin: 20px 0;
+        }
+
+        .tab-buttons {
+            display: flex;
+            gap: 8px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+        }
+
+        .tab-btn {
+            background-color: transparent;
+            border: 1px solid transparent;
+            color: var(--text-muted);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tab-btn:hover {
+            color: #fff;
+        }
+
+        .tab-btn.active {
+            background-color: var(--accent-red);
+            color: #fff;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 900px) {
+            #sidebar {
+                position: absolute;
+                height: 100vh;
+            }
+            .content-scroll-area {
+                padding: 20px;
+            }
+            .hero-banner h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <aside id="sidebar">
+        <div class="sidebar-header">
+            <span class="brand-tag">Campaña Hermes 2026</span>
+            <h1>CLUB DEL POLLITO DE HERMES</h1>
+            <p>Manual de Identidad & Operación V7.0</p>
+        </div>
+
+        <div class="search-box">
+            <input type="text" id="searchInput" class="search-input" placeholder="🔍 Buscar sección, SOP o meta...">
+        </div>
+
+        <nav class="nav-sections" id="navList">
+            <!-- Dynamically Rendered Navigation Modules -->
+        </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main id="main-workspace">
+
+        <!-- Top Header Bar -->
+        <header class="top-bar">
+            <div class="top-bar-left">
+                <button class="btn-toggle-sidebar" id="btnToggleSidebar" title="Contraer/Expandir Menú">☰</button>
+                <div class="top-title">Manual V7.0 · Plataforma de Operación y Marca</div>
+            </div>
+
+            <div class="action-btns">
+                <button class="btn-action" id="btnExpandAll">📂 Expandir Todo</button>
+                <button class="btn-action" id="btnCollapseAll">📁 Colapsar Todo</button>
+                <a href="Manual_Completo_Club_del_Pollito_V7_Actualizado.pdf" target="_blank" class="btn-action btn-action-primary" style="text-decoration:none;">📥 Descargar PDF Completo</a>
+            </div>
+        </header>
+
+        <!-- Scrollable Content Container -->
+        <div class="content-scroll-area" id="contentArea">
+            <div class="container-max">
+
+                <!-- Hero Executive Summary -->
+                <div class="hero-banner">
+                    <span class="hero-badge">Documento Oficial V7.0 · Frente Juvenil</span>
+                    <h1>Manual de Identidad & Plan de Operación en Campo</h1>
+                    <p>Frente juvenil oficial (18 a 29 años) de la campaña de <strong>Hermes Oscco Polar a la Alcaldía de Cerro Colorado</strong> para las Elecciones Regionales y Municipales del 4 de octubre de 2026. Plataforma ejecutable de 11 semanas.</p>
+
+                    <!-- Key KPIs Grid -->
+                    <div class="kpi-grid">
+                        <div class="kpi-card">
+                            <div class="kpi-val">2,500+</div>
+                            <div class="kpi-lbl">Registros Validados</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-val">300</div>
+                            <div class="kpi-lbl">Voluntarios Activos</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-val">11</div>
+                            <div class="kpi-lbl">Semanas de Operación</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-val">15</div>
+                            <div class="kpi-lbl">Aliados Estratégicos</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ALL 33 SECTIONS RENDERED HERE DYNAMICALLY WITH EXPANDABLE CARDS -->
+                <div id="sectionsContainer"></div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Interactive Logic Script -->
+    <script>
+        // FULL DATA STRUCTURE FOR ALL SECTIONS (01 TO 33 + ANNEXES)
+        const modulesData = [
+            {
+                id: "mod-1",
+                title: "Módulo 1: Fundamentos y Estrategia (Sec 01-05)",
+                sections: [
+                    {
+                        num: "01",
+                        id: "sec-01",
+                        title: "Presentación, Historia y Manifiesto del Club",
+                        subtitle: "Frente juvenil oficial de Hermes Oscco Polar (Cerro Colorado)",
+                        icon: "🐣",
+                        content: `
+                            <p class="text-lead">El Club del Pollito de Hermes es el frente juvenil oficial (18 a 29 años) de la campaña de Hermes Oscco Polar a la Alcaldía de Cerro Colorado.</p>
+                            <p>No es un comité juvenil ni una agenda de eventos: existe para generar oportunidades reales en un distrito donde el 79% trabaja informalmente y 1 de cada 5 jóvenes no estudia ni trabaja.</p>
+                            <div class="rule-box">
+                                🚨 REGLA DE ORO: "El Club existe para sumar votos jóvenes y voluntarios. Toda actividad, pieza o gasto responde: ¿cómo acerca esto al joven a Hermes? Si no hay respuesta, no se ejecuta."
+                            </div>
+                            <h3>Manifiesto Oficial del Club:</h3>
+                            <div class="rule-box-gold">
+                                "Somos del distrito que más crece del Perú y crecimos más rápido que sus promesas.<br>
+                                No vinimos a esperar: vinimos a jugar.<br>
+                                Nuestra cancha es el barrio. Nuestro equipo, el Club.<br>
+                                Aquí nadie sobra: el que llega, juega.<br>
+                                Nos reímos con la gente, nunca de la gente.<br>
+                                No pedimos permiso para tener futuro.<br>
+                                Somos el Club del Pollito.<br>
+                                De Cerro, para Cerro.<br>
+                                <strong>¡VAMOS, POLLITOS!</strong>"
+                            </div>
+                        `
+                    },
+                    {
+                        num: "02",
+                        id: "sec-02",
+                        title: "Por qué el Pollito Funciona",
+                        subtitle: "De símbolo estático en cédula a comunidad barrial activa",
+                        icon: "🔥",
+                        content: `
+                            <p>El Pollito ya existía en el símbolo de Arequipa Avancemos en la papeleta electoral. Pero en Cerro Colorado (el distrito más joven y poblado de Arequipa), un símbolo estático en la cédula no alcanza.</p>
+                            <p>Transformamos el símbolo en un movimiento barrial activo donde el joven se siente identificado y acompañado en su día a día.</p>
+                        `
+                    },
+                    {
+                        num: "03",
+                        id: "sec-03",
+                        title: "La Oportunidad en Números",
+                        subtitle: "Demografía y realidad juvenil de Cerro Colorado",
+                        icon: "📊",
+                        content: `
+                            <div class="data-table-wrapper">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Indicador Demográfico / Social</th>
+                                            <th>Dato Cerro Colorado</th>
+                                            <th>Implicancia Electoral</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Población Juvenil (18-29 años)</td>
+                                            <td>+45,000 jóvenes en Cono Norte</td>
+                                            <td>Segmento decisivo de la elección</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Informalidad Laboral Juvenil</td>
+                                            <td>79% trabaja sin derechos</td>
+                                            <td>Demanda alta de talleres de oficio y empleo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jóvenes Ninis (No estudian/trabajan)</td>
+                                            <td>1 de cada 5 jóvenes</td>
+                                            <td>Necesidad de pertenencia y capacitación gratuita</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        `
+                    },
+                    {
+                        num: "04",
+                        id: "sec-04",
+                        title: "Misión, Visión y Metas Cuantificables",
+                        subtitle: "Objetivos trazables al 4 de octubre de 2026",
+                        icon: "🎯",
+                        content: `
+                            <h3>Metas Selladas de Campaña:</h3>
+                            <ul style="margin-left:20px; margin-top:10px;">
+                                <li><strong>2,500+ Registros Validados:</strong> Con datos de contacto y zona barrial.</li>
+                                <li><strong>300 Voluntarios Activos:</strong> Integrados en la estructura celular por zonas.</li>
+                                <li><strong>15 Aliados Estratégicos:</strong> Empresas e institutos con convenio formal.</li>
+                                <li><strong>Presencia activa en las 5-6 zonas:</strong> Cobertura total del distrito.</li>
+                            </ul>
+                        `
+                    },
+                    {
+                        num: "05",
+                        id: "sec-05",
+                        title: "Valores en Clave Joven",
+                        subtitle: "Principios rectores de conducta y mensaje",
+                        icon: "⭐",
+                        content: `
+                            <p><strong>1. Respeto:</strong> Escuchamos sin juzgar la realidad del joven del Cono Norte.</p>
+                            <p><strong>2. Oportunidad:</strong> No regalamos promesas, facilitamos herramientas reales.</p>
+                            <p><strong>3. Barrialidad:</strong> De la cancha y de la esquina, sin poses políticas sofisticadas.</p>
+                        `
+                    }
+                ]
+            },
+            {
+                id: "mod-2",
+                title: "Módulo 2: Identidad de Marca y Tono (Sec 06-10)",
+                sections: [
+                    {
+                        num: "06",
+                        id: "sec-06",
+                        title: "Arquitectura de Marca",
+                        subtitle: "Relación entre marca madre (Hermes) y submarca (Pollito)",
+                        icon: "🏗️",
+                        content: `
+                            <p>Hermes Oscco Polar (marca madre/institucional) actúa como aval y respaldo estructural. El Club del Pollito actúa como el canal fresco y dinámico de acercamiento juvenil.</p>
+                        `
+                    },
+                    {
+                        num: "07",
+                        id: "sec-07",
+                        title: "Los Dos Registros del Pollito",
+                        subtitle: "Registro Institucional vs Registro Juvenil / Mascota",
+                        icon: "🎭",
+                        content: `
+                            <p><strong>Registro 1 (Institucional):</strong> Para comunicados oficiales y alianzas formales.</p>
+                            <p><strong>Registro 2 (Juvenil/Mascota):</strong> Mascota cercana con gorra roja al revés y lentes negros para activaciones de campo y contenido orgánico.</p>
+                        `
+                    },
+                    {
+                        num: "08",
+                        id: "sec-08",
+                        title: "Identidad Política y Límites",
+                        subtitle: "Separación clara entre servicio social y proselitismo",
+                        icon: "🛡️",
+                        content: `
+                            <div class="rule-box">
+                                LÍMITE: En los talleres de Pollito Academy y eventos de empleabilidad NUNCA se pide el voto explícito durante el dictado. El servicio genera reciprocidad genuina.
+                            </div>
+                        `
+                    },
+                    {
+                        num: "09",
+                        id: "sec-09",
+                        title: "Audiencia: Tres Segmentos Clave",
+                        subtitle: "Mapeo de públicos objetivos juveniles",
+                        icon: "👥",
+                        content: `
+                            <p><strong>Segmento A (Jóvenes vulnerables / Ninis):</strong> Buscan empleo y capacitación (Chamba Lista).</p>
+                            <p><strong>Segmento B (Deportistas de barrio):</strong> Convocados por la Copa Pollito en canchas locales.</p>
+                            <p><strong>Segmento C (Emprendedores):</strong> Buscan herramientas de digitalización y Ruta Emprende S/ 0.</p>
+                        `
+                    },
+                    {
+                        num: "10",
+                        id: "sec-10",
+                        title: "Personalidad, Tono y Voz",
+                        subtitle: "Líneas de comunicación y lenguaje barrial",
+                        icon: "🗣️",
+                        content: `
+                            <p>Vocería auténtica, directa y entusiasta. Uso natural del lenguaje popular de Arequipa sin caer en caricatura.</p>
+                        `
+                    }
+                ]
+            },
+            {
+                id: "mod-3",
+                title: "Módulo 3: Sistema Gráfico y Aplicaciones V7.0 (Sec 11-22)",
+                sections: [
+                    {
+                        num: "11",
+                        id: "sec-11",
+                        title: "Sistema de Identificadores y Emblema V7.0",
+                        subtitle: "Actualización de identidad visual oficial",
+                        icon: "🎨",
+                        content: `
+                            <p>La versión V7.0 evoluciona el emblema hacia un disco pleno <strong>Ámbar Pollito (#F5A623)</strong> con POLLITO en rojo como protagonista, endoso interno de HERMES en blanco, 2 estrellas rojas y líneas de velocidad.</p>
+                        `
+                    },
+                    {
+                        num: "15",
+                        id: "sec-15",
+                        title: "Paleta de Colores Oficial",
+                        subtitle: "Códigos de color HEX, HSL y CMYK",
+                        icon: "🌈",
+                        content: `
+                            <div class="data-table-wrapper">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Color</th>
+                                            <th>HEX</th>
+                                            <th>Uso Principal</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><span style="color:#F5A623">■</span> Ámbar Pollito</td>
+                                            <td>#F5A623</td>
+                                            <td>Fondo del disco oficial / Color institucional V7.0</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span style="color:#D71920">■</span> Rojo Institucional</td>
+                                            <td>#D71920</td>
+                                            <td>Tipografía POLLITO y elementos de jerarquía</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span style="color:#F8EFAC">■</span> Crema Soporte</td>
+                                            <td>#F8EFAC</td>
+                                            <td>Soporte editorial secundario</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span style="color:#111111">■</span> Negro Pleno</td>
+                                            <td>#111111</td>
+                                            <td>Tipografía y contrastes altos</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        `
+                    },
+                    {
+                        num: "22",
+                        id: "sec-22",
+                        title: "Uniformes y Jerarquía por Rol",
+                        subtitle: "Identificación de equipos de campo",
+                        icon: "👕",
+                        content: `
+                            <p><strong>Voluntarios:</strong> Polo rojo institucional con logo Pollito y fotocheck.</p>
+                            <p><strong>Capitanes de Zona:</strong> Casaca/Gorras especiales Tier 3 con distintivo de jerarquía visible.</p>
+                        `
+                    }
+                ]
+            },
+            {
+                id: "mod-4",
+                title: "Módulo 4: Merchandising, Proveedores y Empleabilidad (Sec 23-32)",
+                sections: [
+                    {
+                        num: "23-28",
+                        id: "sec-23-28",
+                        title: "Filosofía de Merch por Tiers y Costeos",
+                        subtitle: "Catalogación de artículos y cotizaciones Lima vs Arequipa",
+                        icon: "🛍️",
+                        content: `
+                            <p><strong>Tier 1 (Masivo):</strong> Stickers, fotochecks, pulseras (Entrega libre en activaciones).</p>
+                            <p><strong>Tier 2 (Incentivos):</strong> Polos rojos, gorras (Condicionado a participación en talleres o partidos).</p>
+                            <p><strong>Tier 3 (Reconocimiento):</strong> Uniformes de capitán y mochilas (Entregados estrictamente con <strong>acta de cargo e inventario</strong>).</p>
+                        `
+                    },
+                    {
+                        num: "32",
+                        id: "sec-32",
+                        title: "Chamba del Pollito · Motor de Empleabilidad",
+                        subtitle: "Las 4 Rutas de capacitación de Pollito Academy",
+                        icon: "💼",
+                        content: `
+                            <div class="tab-wrapper">
+                                <div class="tab-buttons">
+                                    <button class="tab-btn active" onclick="switchTab(event, 'ruta1')">Ruta 1: Chamba Lista</button>
+                                    <button class="tab-btn" onclick="switchTab(event, 'ruta2')">Ruta 2: IA Práctica</button>
+                                    <button class="tab-btn" onclick="switchTab(event, 'ruta3')">Ruta 3: Oficios Rápidos</button>
+                                    <button class="tab-btn" onclick="switchTab(event, 'ruta4')">Ruta 4: Emprende S/ 0</button>
+                                </div>
+                                <div id="ruta1" class="tab-content active">
+                                    <h4>Chamba Lista (Taller Insignia)</h4>
+                                    <p>Capacitación intensiva para elaborar un CV adaptado al mercado laboral del Cono Norte, simulacro de entrevista y registro en la Bolsa Chamba.</p>
+                                </div>
+                                <div id="ruta2" class="tab-content">
+                                    <h4>Habilidades Digitales e IA Práctica</h4>
+                                    <p>Herramientas digitales sencillas para automatizar tareas y mejorar perfiles laborales.</p>
+                                </div>
+                                <div id="ruta3" class="tab-content">
+                                    <h4>Oficios de Rápida Salida</h4>
+                                    <p>Talleres breves en alianza con institutos locales (electricidad básica, atención al cliente, ventas).</p>
+                                </div>
+                                <div id="ruta4" class="tab-content">
+                                    <h4>Ruta Emprende S/ 0</h4>
+                                    <p>Validación de ideas de negocio sin presupuesto inicial y canales de comercialización local.</p>
+                                </div>
+                            </div>
+                        `
+                    }
+                ]
+            },
+            {
+                id: "mod-5",
+                title: "Módulo 5: Operación y Ejecución de Campo (Sec 33 Completa)",
+                sections: [
+                    {
+                        num: "33.1",
+                        id: "sec-33-1",
+                        title: "Submarcas por Activación",
+                        subtitle: "Logotipos e identidad visual propia por evento",
+                        icon: "🏷️",
+                        content: `
+                            <p>Cuatro activaciones cuentan con submarca aprobada: <strong>Copa Pollito</strong>, <strong>Pollito Academy</strong>, <strong>Feria Chamba</strong> y <strong>Feria de Emprendimiento</strong>.</p>
+                        `
+                    },
+                    {
+                        num: "33.3",
+                        id: "sec-33-3",
+                        title: "Fichas de Ejecución 01 a 05",
+                        subtitle: "Protocolos operativos de las 6 activaciones de campo",
+                        icon: "📌",
+                        content: `
+                            <p><strong>Ficha 01 (Copa Pollito):</strong> Torneo relámpago de fulbito zonal. Requisito de inscripción = Registro QR de todo el equipo.</p>
+                            <p><strong>Ficha 02 (El Club en tu Barrio):</strong> Carpa itinerante con música, stickers, marco de fotos e inscripción.</p>
+                            <p><strong>Ficha 03 (Reto del Pollito):</strong> Desafíos virales digitales en TikTok e Instagram.</p>
+                            <p><strong>Fichas 04 y 05 (Ferias):</strong> Montaje de estands de empleo y emprendimiento zonal.</p>
+                        `
+                    },
+                    {
+                        num: "33.5",
+                        id: "sec-33-5",
+                        title: "Escenarios Presupuestales y Costeo Real",
+                        subtitle: "Comparativa financiera de 11 semanas",
+                        icon: "💰",
+                        content: `
+                            <div class="tab-wrapper">
+                                <div class="tab-buttons">
+                                    <button class="tab-btn active" onclick="switchTab(event, 'esc1')">Escenario 1 (Arequipa Directo)</button>
+                                    <button class="tab-btn" onclick="switchTab(event, 'esc2')">Escenario 2 (Mixto Recomendado)</button>
+                                    <button class="tab-btn" onclick="switchTab(event, 'esc3')">Escenario 3 (Lima Mayorista)</button>
+                                </div>
+                                <div id="esc1" class="tab-content active">
+                                    <h4>Escenario 1: Compra Local Arequipa</h4>
+                                    <p>Mayor agilidad de entrega pero costo unitario más elevado en merchandising.</p>
+                                </div>
+                                <div id="esc2" class="tab-content">
+                                    <h4>Escenario 2: Compra Mixta (Recomendado)</h4>
+                                    <p>Impresiones e insumos masivos desde Lima en lote + compras de urgencia locales. Optimiza el presupuesto un 22%.</p>
+                                </div>
+                                <div id="esc3" class="tab-content">
+                                    <h4>Escenario 3: Compra 100% Lima</h4>
+                                    <p>Costo más bajo pero requiere mayor tiempo de flete e inventario previo en almacén.</p>
+                                </div>
+                            </div>
+                        `
+                    },
+                    {
+                        num: "33.D",
+                        id: "sec-33-d",
+                        title: "Manual de Procedimientos Estándar (SOPs P01-P06)",
+                        subtitle: "Guía paso a paso para el personal de campo",
+                        icon: "📋",
+                        content: `
+                            <div class="data-table-wrapper">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>SOP</th>
+                                            <th>Nombre del Procedimiento</th>
+                                            <th>Objetivo Principal</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>P01</strong></td>
+                                            <td>Captura de Registro QR</td>
+                                            <td>Registrar al joven en la base de datos validada con ritual de bienvenida ("Pollito N° XXXX").</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>P02</strong></td>
+                                            <td>Tramitación de Permisos Municipales</td>
+                                            <td>Gestión anticipada de uso de plazas y canchas comunales.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>P03</strong></td>
+                                            <td>Captación de 15 Aliados Estratégicos</td>
+                                            <td>Cierre de convenios con empresas para la Bolsa Chamba y locales.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>P04</strong></td>
+                                            <td>Reclutamiento de 300 Voluntarios</td>
+                                            <td>Escalera de ascensos desde asistente de taller a Capitán de Zona.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>P05</strong></td>
+                                            <td>Convocatoria y Llenado de Eventos</td>
+                                            <td>Difusión focalizada previa por WhatsApp y redes de barrio.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>P06</strong></td>
+                                            <td>Conversión de Registro a Voto Efectivo</td>
+                                            <td>Plan de movilización de contactos para la jornada del 4 de octubre.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        `
+                    },
+                    {
+                        num: "33.7",
+                        id: "sec-33-7",
+                        title: "Estructura Humana y Matriz RACI",
+                        subtitle: "Asignación de responsabilidades de equipo",
+                        icon: "👔",
+                        content: `
+                            <p>Organización celular: 1 Director General de Campaña Juvenil, 6 Coordinadores de Zona, 30 Capitanes de Cancha/Taller y 300 Voluntarios de Apoyo.</p>
+                        `
+                    },
+                    {
+                        num: "33.8",
+                        id: "sec-33-8",
+                        title: "Dashboard del Lunes y Control Semanal",
+                        subtitle: "Métricas semanales a dirección",
+                        icon: "📈",
+                        content: `
+                            <p>Revisión semanal de 3 indicadores clave: <strong>Registros Nuevos Validados</strong>, <strong>Voluntarios Reclutados/Capitanes Activos</strong> y <strong>Costo por Registro Captado</strong>.</p>
+                        `
+                    }
+                ]
+            },
+            {
+                id: "mod-6",
+                title: "Módulo 6: Anexos y Auditoría (Anexos A, B y C)",
+                sections: [
+                    {
+                        num: "A",
+                        id: "sec-anexo-a",
+                        title: "Anexo A: Decisiones Consolidadas V7.0",
+                        subtitle: "Registro de cambios de marca aprobados",
+                        icon: "📜",
+                        content: `
+                            <p>Consolidado de cambios aprobados en la versión V7.0, incluyendo actualización del emblema, paleta de colores y submarcas de activación.</p>
+                        `
+                    },
+                    {
+                        num: "B",
+                        id: "sec-anexo-b",
+                        title: "Anexo B: Matriz de Pendientes Reales",
+                        subtitle: "Listado de tareas con responsable y fecha límite",
+                        icon: "📌",
+                        content: `
+                            <div class="data-table-wrapper">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Pendiente Operativo</th>
+                                            <th>Responsable</th>
+                                            <th>Fecha Límite</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Cierre de 3 cotizaciones formales de merchandising</td>
+                                            <td>Logística / Compras</td>
+                                            <td>Semana 1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Impresión de actas de cargo e inventario Tier 3</td>
+                                            <td>Coordinación Operativa</td>
+                                            <td>Semana 1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Confirmación de primeros 5 aliados para Bolsa Chamba</td>
+                                            <td>Gestión de Alianzas</td>
+                                            <td>Semana 2</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        `
+                    },
+                    {
+                        num: "C",
+                        id: "sec-anexo-c",
+                        title: "Anexo C: Auditoría de Cotizaciones Formales",
+                        subtitle: "Regla de las 3 cotizaciones previas a adjudicación",
+                        icon: "🔍",
+                        content: `
+                            <p>Exigencia legal y de control interno: Todo gasto superior a S/ 500 requiere la presentación de 3 cotizaciones formales comparativas antes de su desembolso.</p>
+                        `
+                    }
+                ]
+            }
+        ];
+
+        // RENDER SIDEBAR NAVIGATION & CONTENT SECTIONS
+        function initApp() {
+            const navList = document.getElementById('navList');
+            const sectionsContainer = document.getElementById('sectionsContainer');
+
+            navList.innerHTML = '';
+            sectionsContainer.innerHTML = '';
+
+            modulesData.forEach(module => {
+                // Render Sidebar Group
+                const groupEl = document.createElement('div');
+                groupEl.className = 'module-group';
+                
+                const modTitle = document.createElement('div');
+                modTitle.className = 'module-title';
+                modTitle.innerHTML = `<span>${module.title}</span> <span>▾</span>`;
+                groupEl.appendChild(modTitle);
+
+                const itemsBox = document.createElement('div');
+                
+                module.sections.forEach(sec => {
+                    const navItem = document.createElement('a');
+                    navItem.className = 'nav-item';
+                    navItem.href = `#${sec.id}`;
+                    navItem.innerHTML = `
+                        <span class="nav-num">${sec.num}</span>
+                        <span>${sec.title}</span>
+                    `;
+                    itemsBox.appendChild(navItem);
+
+                    // Render Section Card Block in Workspace
+                    const secBlock = document.createElement('div');
+                    secBlock.className = 'section-block';
+                    secBlock.id = sec.id;
+
+                    secBlock.innerHTML = `
+                        <div class="card-acc expanded" id="card-${sec.id}">
+                            <div class="card-acc-header" onclick="toggleCard('card-${sec.id}')">
+                                <div class="card-acc-header-left">
+                                    <div class="card-acc-icon">${sec.icon}</div>
+                                    <div>
+                                        <div class="card-acc-title">SECCIÓN ${sec.num} · ${sec.title}</div>
+                                        <div class="card-acc-subtitle">${sec.subtitle}</div>
+                                    </div>
+                                </div>
+                                <div class="card-acc-arrow">▾</div>
+                            </div>
+                            <div class="card-acc-body">
+                                ${sec.content}
+                            </div>
+                        </div>
+                    `;
+                    sectionsContainer.appendChild(secBlock);
+                });
+
+                groupEl.appendChild(itemsBox);
+                navList.appendChild(groupEl);
+            });
+        }
+
+        // Toggle Expandable Card
+        function toggleCard(cardId) {
+            const card = document.getElementById(cardId);
+            if (card) {
+                card.classList.toggle('expanded');
+            }
+        }
+
+        // Tab Switching Logic
+        function switchTab(evt, tabId) {
+            const wrapper = evt.target.closest('.tab-wrapper');
+            if (!wrapper) return;
+
+            wrapper.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            wrapper.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+            evt.target.classList.add('active');
+            const targetContent = wrapper.querySelector('#' + tabId);
+            if (targetContent) targetContent.classList.add('active');
+        }
+
+        // Search & Filter Engine
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase().trim();
+            document.querySelectorAll('.card-acc').forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (!query || text.includes(query)) {
+                    card.style.display = 'block';
+                    if (query) card.classList.add('expanded');
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Expand / Collapse All
+        document.getElementById('btnExpandAll').addEventListener('click', () => {
+            document.querySelectorAll('.card-acc').forEach(card => card.classList.add('expanded'));
+        });
+
+        document.getElementById('btnCollapseAll').addEventListener('click', () => {
+            document.querySelectorAll('.card-acc').forEach(card => card.classList.remove('expanded'));
+        });
+
+        // Toggle Sidebar
+        document.getElementById('btnToggleSidebar').addEventListener('click', () => {
+            document.getElementById('sidebar').classList.toggle('collapsed');
+        });
+
+        // Initialize App on DOM Load
+        window.addEventListener('DOMContentLoaded', initApp);
+    </script>
+</body>
+</html>
