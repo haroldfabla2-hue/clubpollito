@@ -354,6 +354,28 @@ img[src*="Cara de pollito"]:hover, img[src*="LOGO-POLLITO"]:hover, .pollito-anim
   line-height: 1.35 !important;
 }
 
+
+/* COMPACT TABLES & NO SLIDE CLIPPING */
+.t-xs tbody td {
+  padding: 2.5px 5px !important;
+  font-size: 8.8px !important;
+  line-height: 1.25 !important;
+}
+.t-xs thead th {
+  padding: 3px 5px !important;
+  font-size: 8.5px !important;
+}
+.tag {
+  font-size: 8.5px !important;
+  padding: 2px 6px !important;
+  margin-top: 6px !important;
+}
+.page {
+  overflow: visible !important;
+  min-height: 608px !important;
+  height: auto !important;
+}
+
 </style></head>
 <body><div class="page" style="background:var(--amarillo);padding:0;overflow:hidden">
   <div style="position:absolute;top:38px;left:70px;width:140px;height:120px;
@@ -1003,7 +1025,22 @@ La marca protege al candidato: nadie está por encima de esa función.</p></div>
 <div class="rule"></div>
 <div class="body">
 <div class="g-side-r" style="gap:20px">
-<div class="imgbox" style="padding:10px"><img class="asset" src="assets/img_10.png" style="width:100%"></div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 10px;">
+          <div style="background:#fff; padding:6px; border:1px solid var(--linea); border-radius:6px; text-align:center;">
+            <img class="asset" src="assets/new_logos/opcion_01_-_carnet.webp" style="height:110px; width:auto; margin:0 auto;">
+            <div style="font-size:9px; font-weight:700; color:var(--negro); margin-top:4px;">Carnet Opción 1</div>
+          </div>
+          <div style="background:#fff; padding:6px; border:1px solid var(--linea); border-radius:6px; text-align:center;">
+            <img class="asset" src="assets/new_logos/opcion_02_carnet.webp" style="height:110px; width:auto; margin:0 auto;">
+            <div style="font-size:9px; font-weight:700; color:var(--negro); margin-top:4px;">Carnet Opción 2</div>
+          </div>
+          <div style="background:#fff; padding:6px; border:1px solid var(--linea); border-radius:6px; text-align:center;">
+            <img class="asset" src="assets/new_logos/lanyar.webp" style="height:110px; width:auto; margin:0 auto;">
+            <div style="font-size:9px; font-weight:700; color:var(--negro); margin-top:4px;">Lanyard Oficial</div>
+          </div>
+        </div>
+        
 <div>
 <p class="lead">La credencial es <b>el activo estratégico del Club</b>, no un souvenir. Cada carnet emitido es un registro con
 nombre, zona, número de Pollito y QR: la base de datos de movilización del 4 de octubre.</p>
@@ -1188,10 +1225,18 @@ El procedimiento de trámite está en la Sección 33.D.02.</p></div>
 <p class="lead">El uniforme no es ropa: <b>es jerarquía visible en campo.</b> En una activación con 200 personas, quien manda
 tiene que reconocerse a tres metros.</p>
 <div class="body">
-<div class="g2" style="gap:14px">
-<div class="imgbox" style="padding:8px"><img class="asset" src="assets/img_12.png" style="width:100%"></div>
-<div class="imgbox" style="padding:8px"><img class="asset" src="assets/img_12.png" style="width:100%"></div>
-</div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 8px;">
+          <div style="background:#fff; padding:8px; border:1px solid var(--linea); border-radius:6px; text-align:center;">
+            <img class="asset" src="assets/new_logos/gorra_opcion_01.webp" style="height:100px; width:auto; margin:0 auto;">
+            <div style="font-size:9px; font-weight:700; color:var(--negro); margin-top:4px;">Gorra Snapback Opción 1</div>
+          </div>
+          <div style="background:#fff; padding:8px; border:1px solid var(--linea); border-radius:6px; text-align:center;">
+            <img class="asset" src="assets/new_logos/gorra_opcion_02.webp" style="height:100px; width:auto; margin:0 auto;">
+            <div style="font-size:9px; font-weight:700; color:var(--negro); margin-top:4px;">Gorra Snapback Opción 2</div>
+          </div>
+        </div>
+        
 <table class="t-xs" style="margin-top:12px">
 <thead><tr><th style="width:19%">ROL</th><th style="width:11%">PRENDA</th><th style="width:17%">COLOR BASE</th><th style="width:29%">MARCA EN LA PRENDA</th><th>SE ENTREGA A</th></tr></thead>
 <tbody>
@@ -1228,7 +1273,26 @@ Cada entrega es un nombre en la base o es un riesgo de multa. No hay tercera cat
 <div class="page "><div class="ghost">24</div>
 <div class="eyebrow">SECCIONES 24 · 25 · 26 · CATÁLOGO</div>
 <h1 class="sec sm">Catálogo por tier</h1>
-<div class="imgbox" style="padding:10px;margin-bottom:10px;text-align:center"><img class="asset" src="assets/img_14.png" style="height:140px;width:auto"></div>
+
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 8px;">
+          <div style="background:#fff; padding:4px; border:1px solid var(--linea); border-radius:6px; text-align:center;">
+            <img class="asset" src="assets/new_logos/stickers.webp" style="height:70px; width:auto; margin:0 auto;">
+            <div style="font-size:8px; font-weight:700;">Stickers</div>
+          </div>
+          <div style="background:#fff; padding:4px; border:1px solid var(--linea); border-radius:6px; text-align:center;">
+            <img class="asset" src="assets/new_logos/pin_destapador.webp" style="height:70px; width:auto; margin:0 auto;">
+            <div style="font-size:8px; font-weight:700;">Pin Destapador</div>
+          </div>
+          <div style="background:#fff; padding:4px; border:1px solid var(--linea); border-radius:6px; text-align:center;">
+            <img class="asset" src="assets/new_logos/tomatodo.webp" style="height:70px; width:auto; margin:0 auto;">
+            <div style="font-size:8px; font-weight:700;">Tomatodo</div>
+          </div>
+          <div style="background:#fff; padding:4px; border:1px solid var(--linea); border-radius:6px; text-align:center;">
+            <img class="asset" src="assets/new_logos/bolsa_de_tela.webp" style="height:70px; width:auto; margin:0 auto;">
+            <div style="font-size:8px; font-weight:700;">Tote Bag</div>
+          </div>
+        </div>
+        
 <div class="rule"></div>
 <div class="body">
 <div class="tag">TIER 1 · MASIVO · ENTREGA ABIERTA</div>
@@ -1707,7 +1771,22 @@ foto oscura, va directa.</p></div>
 </div>
 <div>
 <div class="tag">AVATAR DERIVADO</div>
-<div class="imgbox" style="padding:14px;margin-top:6px"><img class="asset" src="assets/img_2.png" style="height:118px;width:auto"></div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 10px;">
+          <div style="background:#fff; padding:6px; border:1px solid var(--linea); border-radius:6px; text-align:center;">
+            <img class="asset" src="assets/new_logos/opcion_01_-_carnet.webp" style="height:110px; width:auto; margin:0 auto;">
+            <div style="font-size:9px; font-weight:700; color:var(--negro); margin-top:4px;">Carnet Opción 1</div>
+          </div>
+          <div style="background:#fff; padding:6px; border:1px solid var(--linea); border-radius:6px; text-align:center;">
+            <img class="asset" src="assets/new_logos/opcion_02_carnet.webp" style="height:110px; width:auto; margin:0 auto;">
+            <div style="font-size:9px; font-weight:700; color:var(--negro); margin-top:4px;">Carnet Opción 2</div>
+          </div>
+          <div style="background:#fff; padding:6px; border:1px solid var(--linea); border-radius:6px; text-align:center;">
+            <img class="asset" src="assets/new_logos/lanyar.webp" style="height:110px; width:auto; margin:0 auto;">
+            <div style="font-size:9px; font-weight:700; color:var(--negro); margin-top:4px;">Lanyard Oficial</div>
+          </div>
+        </div>
+        
 <p class="mini" style="margin-top:7px">La mascota se extrae del emblema nuevo para uso bajo 25 mm. <b>No se recorta el disco:
 se usa la mascota aislada</b>, igual que fijaba la Sección 12 — si no entra a 25 mm, se cambia de versión, no se reduce la insignia.</p>
 <div class="box" style="margin-top:12px"><div class="box-t">QUÉ SE REIMPRIME Y QUÉ NO</div>
@@ -3119,50 +3198,3 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 setTimeout(renderCalCurrentView, 300);
 </script>
-<div class="page "><div class="ghost">A</div>
-<div class="eyebrow">ANEXO A · DECISIONES TOMADAS</div>
-<h1 class="sec sm">Decisiones tomadas · nuevas entradas</h1>
-<div class="rule"></div>
-<p class="lead">No crear variantes sin plantilla y aprobación oficial registrada en el Anexo A</p>
-<div class="body">
-<table class="t-sm">
-<thead><tr><th style="width:26%">DECISIÓN</th><th>JUSTIFICACIÓN</th></tr></thead>
-<tbody>
-<tr><td><b>Capa de ejecución · Sección 33 ()</b></td><td>El manual pasa de sistema de decisiones a sistema ejecutable <b>sin alterar ninguna decisión previa.</b> Se detectó que las Secciones 01–32 responden qué y por qué, pero no cómo, con quién, cuánto cuesta ni cómo se mide — lo que impedía que un coordinador ejecutara desde el documento. La Sección 33 añade ficha de ejecución por activación, guiones de taller, dimensionamiento de merch con costeo de mercado, calendario de 11 semanas, dashboard y matriz de riesgo. <b>No crea pilares, activaciones, rutas ni roles nuevos.</b></td></tr>
-<tr><td><b>Sistema de submarcas por activación ()</b></td><td>Se aprueban formalmente cuatro emblemas —Copa Pollito, Pollito Academy, Feria de Empleabilidad y Feria de Emprendimiento— para activaciones que las Secciones 29 y 32 <b>ya habían decidido.</b> La prohibición 11 de la Sección 18 exige aprobación de dirección para toda submarca: esta entrada es esa aprobación. La regla de convivencia queda sellada — la submarca identifica la activación, la insignia oficial firma la pieza y el endoso HERMES permanece estructural. <b>Ninguna submarca adicional se crea sin nueva entrada en este anexo.</b></td></tr>
-<tr><td><b>Nueva insignia oficial ()</b></td><td>Se aprueba un emblema nuevo que <b>se establece como norma oficial</b> en todas las aplicaciones. Cambios: disco Amarillo pleno en lugar de anillo crema, "POLLITO" en rojo como elemento protagonista, "HERMES" en blanco de gran tamaño en la base, y estrellas y líneas de velocidad como recursos internos. <b>La bajada "ALCALDE DE CERRO COLORADO" sale del círculo</b> porque resultaba ilegible bajo 25 mm y caduca la noche del 4 de octubre; se sustituye por la regla de acompañamiento: en toda pieza electoral el cargo se compone fuera del emblema. La mascota y su registro juvenil no cambian. El lockup vertical se retira del sistema.</td></tr>
-<tr><td><b>Amarillo Pollito (Oficial)</b></td><td>Se formaliza un sexto color medido sobre el arte final del emblema: el amarillo del disco se desplaza 27 puntos hacia el naranja respecto del #F4C400 sellado. Se documenta como <b>color exclusivo del emblema</b> en lugar de forzar el arte al valor antiguo o dejar la desviación sin declarar. El #F4C400 permanece intacto como color dominante del sistema; el crema #F8EFAC sale del emblema y queda como soporte editorial. Actualiza la Sección 15.</td></tr>
-<tr><td><b>Claim "Jóvenes que transforman" ()</b></td><td>Se incorpora al sistema verbal de la Sección 10 con uso delimitado: <b>merch y piezas de identidad, nunca cierre de video.</b> El cierre sigue siendo el sello de grito ¡VAMOS, POLLITOS! Dos cierres compitiendo diluyen ambos.</td></tr>
-<tr><td><b>Ajuste de metas del pilar de empleabilidad ()</b></td><td>Las metas de la Sección 32 se fijaron sobre 12 semanas desde el 11 de julio. Al iniciar la ejecución documentada el 21 de julio quedan 11, y las colocaciones requieren 30 días de maduración. Se ajustan referencias (120→100), colocaciones (40→25) y mentores (20→15). <b>Se declara el ajuste en lugar de sostener una meta que el calendario ya no permite.</b></td></tr>
-</tbody></table>
-<div class="box" style="margin-top:8px"><div class="box-t">LO QUE ESTA SECCIÓN NO DECIDIÓ</div>
-<p>No se creó ninguna activación, ruta de formación, serie de contenido, rol ni regla de marca que el manual no tuviera ya.
-Todo lo que parecía faltar estratégicamente <b>se registró como pendiente en el Anexo B en lugar de inventarse aquí.</b>
-Esa es la disciplina que mantiene el manual coherente entre versiones.</p></div>
-</div><div class="foot"><span>CLUB DEL POLLITO DE HERMES · MANUAL DE OPERACIÓN</span><span class="pg"></span></div></div>
-<div class="page "><div class="ghost">B</div>
-<div class="eyebrow">ANEXO B · PENDIENTES REALES</div>
-<h1 class="sec sm">Pendientes reales · nuevas entradas</h1>
-<div class="rule"></div>
-<p class="lead">Lo que este manual no resuelve y alguien debe ejecutar. Un pendiente sin dueño es una excusa futura.</p>
-<div class="body">
-<table class="t-xs" style="margin-bottom: 4px;">
-<thead><tr><th style="width:22%">PENDIENTE</th><th style="width:38%">DETALLE</th><th style="width:18%">RESPONSABLE</th><th>PLAZO</th></tr></thead>
-<tbody>
-<tr style="background:#FFECEC"><td><b>Vectorización de la insignia</b></td><td>Vector AI/SVG de las cuatro versiones del emblema nuevo. Bloqueante para toda producción: sin vectores no se envía nada a imprenta</td><td>Brandistry</td><td class="warn">Semana 1 · BLOQUEANTE</td></tr>
-<tr style="background:#FFECEC"><td><b>Orden textil consolidada</b></td><td>Cierre de las 3 cotizaciones y adjudicación del lote completo del escenario B. La fuente de Gamarra advierte que el precio base aplica fuera de temporada electoral</td><td>Dirección del Club</td><td class="warn">Semana 1 · BLOQUEANTE</td></tr>
-<tr style="background:#FFECEC"><td><b>Banco de datos ante la ANPD</b></td><td>Inscripción previa a cualquier registro QR, con consentimiento expreso, finalidad declarada, canal ARCO y solo mayores de 18 (Ley 29733)</td><td>Legal de campaña</td><td class="warn">Semana 1 · BLOQUEANTE</td></tr>
-<tr><td><b>Cruce del padrón por zona</b></td><td>Define qué barrio recibe carpa cada semana y dónde se ubica la Copa. Sin él, la ruta de 11 barrios es una intuición</td><td>Dirección de campaña</td><td>Semana 1</td></tr>
-<tr><td><b>Solicitud de losa deportiva</b></td><td>Autorización de uso ante la Subgerencia de Deporte, más sede alterna en paralelo. 15 días hábiles de anticipación</td><td>Coordinador de zona</td><td>Semana 1</td></tr>
-<tr><td><b>Convenios con aliados</b></td><td>Institutos, academias y negocios del distrito. Los descuentos los asume el aliado, nunca la campaña (Sección 32)</td><td>Dirección del Club</td><td>Semanas 1–3</td></tr>
-<tr><td><b>Facilitadores confirmados</b></td><td>8–12 voluntarios para las 24 sesiones de Pollito Academy, con el guion de la Sección 33.4 entregado</td><td>Dirección del Club</td><td>Semana 2</td></tr>
-<tr><td><b>Formato de acta de entrega</b></td><td>Documento con los 8 campos de la Sección 33.5.5, impreso y disponible antes del primer tiraje</td><td>Dirección del Club</td><td>Antes del 1er tiraje</td></tr>
-<tr><td><b>Manual de una página por rol</b></td><td>Ocho hojas, una por rol, con qué hago / a quién pregunto / qué no hago / cómo me miden</td><td>Dirección del Club</td><td>Semana 2</td></tr>
-<tr><td><b>Autorización de uso de imagen</b></td><td>Formato firmado por todo rostro identificable, obligatorio en toda activación (Sección 08)</td><td>Legal de campaña</td><td>Semana 1</td></tr>
-<tr><td><b>Cotización de medallas</b></td><td>Única partida marcada ESTIMADA en el costeo. Requiere 3 cotizaciones formales antes de adjudicar</td><td>Dirección del Club</td><td>Semana 2</td></tr>
-</tbody></table>
-<div class="box red" style="margin-top:6px"><div class="box-t">RUTA CRÍTICA ACTUALIZADA</div>
-<p>Sin vectores no hay producción; sin ANPD no hay registro; sin tesorero no hay gasto — y ahora también: <b>sin orden textil en la
-semana 1, el precio sube y la producción de 10 a 20 días ya no entra en el calendario.</b> Los cuatro bloqueantes son de la
-misma semana y ninguno puede esperar a la siguiente.</p></div>
-</div><div class="foot"><span>CLUB DEL POLLITO DE HERMES · MANUAL DE OPERACIÓN</span><span class="pg"></span></div></div>
