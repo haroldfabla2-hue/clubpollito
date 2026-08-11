@@ -297,6 +297,63 @@ img[src*="Cara de pollito"]:hover, img[src*="LOGO-POLLITO"]:hover, .pollito-anim
   .foot { position: relative !important; left: 0 !important; right: 0 !important; bottom: 0 !important; margin-top: 25px !important; padding-top: 15px !important; border-top: 1px solid var(--linea); }
 }
 
+
+/* UNIVERSAL FOOTER & OVERFLOW COLLISION FIX */
+.page {
+  position: relative !important;
+  width: 1080px !important;
+  min-height: 608px !important;
+  height: auto !important;
+  padding: 36px 60px 45px 60px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  margin-bottom: 30px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important; /* Prevents spilling onto next slide */
+  background-clip: padding-box !important;
+}
+
+.body {
+  position: relative !important;
+  z-index: 2 !important;
+  flex: 1 1 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  padding-bottom: 15px !important;
+}
+
+.foot {
+  position: relative !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  margin-top: auto !important;
+  padding-top: 10px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  z-index: 10 !important;
+  font-size: 9.4px !important;
+  color: var(--gris) !important;
+}
+
+.t-xs tbody td {
+  padding: 3px 6px !important;
+  font-size: 9.2px !important;
+  line-height: 1.25 !important;
+}
+
+.box.red {
+  padding: 8px 12px !important;
+  margin-top: 6px !important;
+}
+
+.box.red p {
+  font-size: 9.5px !important;
+  line-height: 1.35 !important;
+}
+
 </style></head>
 <body><div class="page" style="background:var(--amarillo);padding:0;overflow:hidden">
   <div style="position:absolute;top:38px;left:70px;width:140px;height:120px;
@@ -714,7 +771,7 @@ para que el joven se identifique.</b></p></div>
 <div class="body">
 <div class="g-side" style="gap:18px">
 <div>
-<table class="t-xs">
+<table class="t-xs" style="margin-bottom: 4px;">
 <thead><tr><th style="width:26%">LENGUAJE CORPORAL</th><th>REGLA DE ANIMACIÓN E ILUSTRACIÓN</th></tr></thead>
 <tbody>
 <tr><td><b>Postura base</b></td><td>Pecho ligeramente inflado, mentón arriba: seguridad sin arrogancia</td></tr>
@@ -809,7 +866,7 @@ talento ajeno y reparte crédito. El joven no sigue al Pollito: juega con él.</
 <p class="lead">El Club hereda la paleta de la marca madre y en formaliza el <b>Amarillo Pollito (Oficial)</b> del nuevo emblema.
 El amarillo sigue siendo el color dominante del sistema.</p>
 <div class="body">
-<table class="t-xs">
+<table class="t-xs" style="margin-bottom: 4px;">
 <thead><tr><th style="width:15%">COLOR</th><th style="width:11%">HEX</th><th style="width:13%">RGB</th><th style="width:15%">CMYK REF.</th><th style="width:14%">ORACAL 651</th><th>USO</th></tr></thead>
 <tbody>
 <tr><td><b>Amarillo Pollito (Oficial)</b><br><span style="color:#777"></span></td><td>#FAAB08</td><td>250·171·8</td><td>C0 M35 Y97 K0</td><td>020 Golden Yellow</td><td><b>Exclusivo del emblema.</b> Disco y borde de la insignia</td></tr>
@@ -988,7 +1045,7 @@ base opera bajo la Ley 29733 — banco inscrito ante la ANPD, consentimiento exp
 <p class="lead">Un registro es un trámite; un ritual es una memoria. La pertenencia no se archiva: <b>se celebra.</b> Los cinco
 rituales son obligatorios y se ejecutan igual en toda zona.</p>
 <div class="body">
-<table class="t-xs">
+<table class="t-xs" style="margin-bottom: 4px;">
 <thead><tr><th style="width:5%">#</th><th style="width:17%">RITUAL</th><th style="width:46%">CÓMO SE EJECUTA</th><th>QUÉ PRODUCE</th></tr></thead>
 <tbody>
 <tr><td class="num">1</td><td><b>Ingreso</b></td><td>Registro QR asistido + asignación inmediata del número de Pollito, dicho en voz alta: "Bienvenido, Pollito N° 0854"</td><td>El número convierte un dato en una identidad</td></tr>
@@ -1078,7 +1135,7 @@ Series con nombre propio, motor de contenido de usuarios y red de embajadores co
 <div class="body">
 <div class="g-side" style="gap:18px">
 <div>
-<table class="t-xs">
+<table class="t-xs" style="margin-bottom: 4px;">
 <thead><tr><th style="width:28%">SERIE / FORMATO</th><th>MECÁNICA REPETIBLE</th></tr></thead>
 <tbody>
 <tr><td><b>"El Pollito Responde"</b></td><td>Video corto respondiendo una pregunta real del distrito. Mismo encuadre, mismo saludo, misma salida</td></tr>
@@ -1092,7 +1149,7 @@ Series con nombre propio, motor de contenido de usuarios y red de embajadores co
 a toda la marca.</b></p></div>
 </div>
 <div>
-<table class="t-xs">
+<table class="t-xs" style="margin-bottom: 4px;">
 <thead><tr><th style="width:32%">MOTOR</th><th>CÓMO OPERA</th></tr></thead>
 <tbody>
 <tr><td><b>UGC</b></td><td>Marco de foto + hashtag + repost diario de lo mejor de la comunidad</td></tr>
@@ -1268,7 +1325,7 @@ Multa por omisión: 1–5 UIT. <b>Sin factura, no hay compra.</b></p></div>
 <p>El 80% del contenido es comunidad; solo el 20% es campaña explícita. <b>Se gana la atención antes de pedir el voto.</b></p></div>
 </div>
 <div>
-<table class="t-xs">
+<table class="t-xs" style="margin-bottom: 4px;">
 <thead><tr><th style="width:34%">CANAL</th><th>CADENCIA MÍNIMA</th></tr></thead>
 <tbody>
 <tr><td><b>TikTok</b></td><td>5–7 videos por semana</td></tr>
@@ -1303,7 +1360,7 @@ Multa por omisión: 1–5 UIT. <b>Sin factura, no hay compra.</b></p></div>
 </div>
 <div class="g-side" style="gap:18px;margin-top:14px">
 <div>
-<table class="t-xs">
+<table class="t-xs" style="margin-bottom: 4px;">
 <thead><tr><th style="width:74%">CHECKLIST DE LOS PRIMEROS 30 DÍAS</th><th>ESTADO</th></tr></thead>
 <tbody>
 <tr><td>Inscribir el banco de datos ante la ANPD antes del primer registro QR</td><td class="warn">Bloqueante</td></tr>
@@ -1335,7 +1392,7 @@ aprobada por la dirección.</p></div>
 <h1 class="sec sm">Escalabilidad y futuro del Club</h1>
 <div class="rule"></div>
 <div class="body">
-<table class="t-xs">
+<table class="t-xs" style="margin-bottom: 4px;">
 <thead><tr><th style="width:16%">ESCALA</th><th style="width:22%">ESTRUCTURA</th><th style="width:32%">QUÉ CAMBIA</th><th>QUÉ NO CAMBIA JAMÁS</th></tr></thead>
 <tbody>
 <tr><td><b>50 miembros</b></td><td>4 células · 1 zona piloto</td><td>Dirección opera todo en directo</td><td rowspan="4" style="vertical-align:middle"><b>La identidad completa:</b> insignia, paleta, tono, rituales, checklist de auditoría y prohibiciones. El manual es el mismo para 50 y para 50.000</td></tr>
@@ -1431,7 +1488,7 @@ Los descuentos de aliados se canalizan por convenio del tercero, no con recursos
 <div class="card acc-r"><div class="card-t" style="font-size:10px">MOTOR 4 · IA y economía digital</div><p style="font-size:8.8px">IA para conseguir chamba, oficios + digital y trabajo remoto. <b>Regla de realismo: nada de humo</b>, no se promete "vivir de la IA" ni ingresos garantizados</p></div>
 </div>
 <div class="g-side" style="gap:16px;margin-top:12px">
-<table class="t-xs">
+<table class="t-xs" style="margin-bottom: 4px;">
 <thead><tr><th style="width:62%">KPI DEL PILAR</th><th>META · 12 SEMANAS</th></tr></thead>
 <tbody>
 <tr><td>Talleres dictados / asistentes</td><td class="num">24 / 600</td></tr>
@@ -1671,7 +1728,7 @@ stock pagado por un cambio de emblema es gasto sin retorno a 75 días de la elec
 <p class="lead">Las seis activaciones ya decididas en el manual, con su carga operativa real. <b>No se añade ninguna activación
 nueva.</b> Esta tabla es la que se lleva a la reunión de dirección: si algo no cabe en 11 semanas, se ve aquí.</p>
 <div class="body">
-<table class="t-xs">
+<table class="t-xs" style="margin-bottom: 4px;">
 <thead><tr>
 <th style="width:15%">ACTIVACIÓN</th><th style="width:11%">SUBMARCA</th><th style="width:11%">FRECUENCIA</th>
 <th style="width:9%">META QR</th><th style="width:11%">COSTO / EDICIÓN</th><th style="width:24%">RIESGO LEGAL PRINCIPAL</th><th style="width:9%">ARRANQUE</th>
@@ -1707,7 +1764,7 @@ nueva.</b> Esta tabla es la que se lleva a la reunión de dirección: si algo no
   <div class="rule" style="margin-bottom:0"></div></div>
 </div>
 <div class="body" style="margin-top:11px">
-<table class="t-xs">
+<table class="t-xs" style="margin-bottom: 4px;">
 <thead><tr><th style="width:20%">CAMPO</th><th>ESPECIFICACIÓN</th></tr></thead>
 <tbody>
 <tr><td><b>Decisión de origen</b></td><td>Sección 29, 2ª parte: <i>"Campeonato de fulbito por zonas. Inscripción = registro QR del equipo completo. La activación ancla del Club."</i> · Sección 09 fija el insight: la cancha es la red social física del distrito.</td></tr>
@@ -1826,7 +1883,7 @@ una carpa, cuatro personas, tres horas, un barrio nuevo por semana.</p>
 <div class="body">
 <div class="g-side" style="gap:18px">
 <div>
-<table class="t-xs">
+<table class="t-xs" style="margin-bottom: 4px;">
 <thead><tr><th style="width:22%">CAMPO</th><th>ESPECIFICACIÓN</th></tr></thead>
 <tbody>
 <tr><td><b>Decisión de origen</b></td><td>Sección 29: <i>"Carpa itinerante: registro, stickers, foto con el marco del Pollito y vocería breve. Un barrio nuevo por semana, priorizando el Cono Norte."</i></td></tr>
@@ -1895,7 +1952,7 @@ corre desde la semana 1 mientras los permisos de las demás todavía están en t
 tope de S/ 16,50 del art. 42 LOP. Tres premios de S/ 15 son legales; uno de S/ 45 es una multa de 5 a 30 UIT.</p></div>
 </div>
 <div>
-<table class="t-xs">
+<table class="t-xs" style="margin-bottom: 4px;">
 <thead><tr><th style="width:22%">CAMPO</th><th>ESPECIFICACIÓN</th></tr></thead>
 <tbody>
 <tr><td><b>Decisión de origen</b></td><td>Sección 29 y Sección 20: <i>"Challenge quincenal con premio Tier 2, hashtag propio y dueto abierto."</i></td></tr>
@@ -1924,7 +1981,7 @@ por eso se ejecutan con el <b>mismo kit y el mismo equipo</b>, cambiando solo su
 <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
 <img class="asset" src="assets/img_18.png" style="height:62px;width:auto">
 <div><div class="card-t" style="font-size:12px">FERIA CHAMBA</div><div class="mini">2 ediciones · semanas 4 y 9</div></div></div>
-<table class="t-xs">
+<table class="t-xs" style="margin-bottom: 4px;">
 <thead><tr><th style="width:32%">CAMPO</th><th>ESPECIFICACIÓN</th></tr></thead>
 <tbody>
 <tr><td><b>Origen</b></td><td>Sección 32, Motor 2: <i>"Feria laboral y de oficios acoplada a una activación mayor por mes."</i></td></tr>
@@ -1941,7 +1998,7 @@ por eso se ejecutan con el <b>mismo kit y el mismo equipo</b>, cambiando solo su
 <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
 <img class="asset" src="assets/img_19.png" style="height:62px;width:auto">
 <div><div class="card-t" style="font-size:12px">FERIA DE EMPRENDIMIENTO</div><div class="mini">1 edición · semana 7</div></div></div>
-<table class="t-xs">
+<table class="t-xs" style="margin-bottom: 4px;">
 <thead><tr><th style="width:32%">CAMPO</th><th>ESPECIFICACIÓN</th></tr></thead>
 <tbody>
 <tr><td><b>Origen</b></td><td>Sección 32, Ruta Emprende: <i>"Validar una idea con S/ 0, formalización básica, ventas por WhatsApp y redes."</i></td></tr>
@@ -2061,7 +2118,7 @@ empleo</b> — la Sección 32 lo prohíbe: nada de humo.</p>
 <div class="g3" style="gap:13px">
 <div>
 <div class="badge yl" style="margin-bottom:6px">RUTA DIGITAL + IA</div>
-<table class="t-xs">
+<table class="t-xs" style="margin-bottom: 4px;">
 <thead><tr><th style="width:26%">MIN</th><th>BLOQUE</th></tr></thead>
 <tbody>
 <tr><td class="num">00–10</td><td>Registro. "¿Qué app usas para trabajar?" — se rompe el mito de que la IA es para expertos</td></tr>
@@ -2075,7 +2132,7 @@ no se promete "vivir de la IA". Se enseña a conseguir chamba con ella.</p>
 </div>
 <div>
 <div class="badge yl" style="margin-bottom:6px">RUTA EMPRENDE</div>
-<table class="t-xs">
+<table class="t-xs" style="margin-bottom: 4px;">
 <thead><tr><th style="width:26%">MIN</th><th>BLOQUE</th></tr></thead>
 <tbody>
 <tr><td class="num">00–10</td><td>Registro. Cada uno dice qué vende o qué quiere vender</td></tr>
@@ -2089,7 +2146,7 @@ la <b>Feria de Emprendimiento</b> de la semana 7: los expositores salen de aquí
 </div>
 <div>
 <div class="badge yl" style="margin-bottom:6px">RUTA FREELANCE</div>
-<table class="t-xs">
+<table class="t-xs" style="margin-bottom: 4px;">
 <thead><tr><th style="width:26%">MIN</th><th>BLOQUE</th></tr></thead>
 <tbody>
 <tr><td class="num">00–10</td><td>Registro. Qué habilidad tiene cada uno que alguien pagaría</td></tr>
@@ -2209,7 +2266,7 @@ Dos cierres compiten entre sí y ninguno se recuerda.</p></div>
 <p class="lead">El dimensionamiento no sale de una intuición: sale de <b>las metas ya selladas en la Sección 04</b> —300 voluntarios
 activos, 2.500 registros— cruzadas con la estructura celular de la Sección 30 y el calendario de activaciones.</p>
 <div class="body">
-<table class="t-xs">
+<table class="t-xs" style="margin-bottom: 4px;">
 <thead><tr><th style="width:14%">CAPA</th><th style="width:19%">QUIÉNES SON</th><th style="width:8%">CUÁNTOS</th><th style="width:26%">QUÉ RECIBE</th><th style="width:12%">UNIDADES</th><th>DE DÓNDE SALE LA CANTIDAD</th></tr></thead>
 <tbody>
 <tr><td><b>Capa 1</b><br>Núcleo duro</td><td>Dirección del Club y coordinación digital</td><td class="num">6</td><td>Kit completo: gorra + polo amarillo + polo negro + fotocheck</td><td>6 gorras<br>12 polos<br>6 fotochecks</td><td>Equipo fijo que aparece en toda pieza y toda activación durante las 11 semanas</td></tr>
@@ -2541,7 +2598,7 @@ crítico:</b> el cruce de padrón del Anexo B — sin él, no se puede decir a n
 <p class="lead">Del <b>21 de julio al 4 de octubre de 2026.</b> Cada semana con su activación, su hito de merch, su meta de
 registros acumulados y el KPI que se revisa el lunes siguiente.</p>
 <div class="body">
-<table class="t-xs">
+<table class="t-xs" style="margin-bottom: 4px;">
 <thead><tr><th style="width:7%">SEM</th><th style="width:11%">FECHAS</th><th style="width:20%">ACTIVACIÓN QUE CORRE</th><th style="width:19%">HITO DE MERCH Y PRODUCCIÓN</th><th style="width:9%">PIEZAS</th><th style="width:11%">QR ACUM.</th><th>KPI QUE SE REVISA</th></tr></thead>
 <tbody>
 <tr><td class="num">1</td><td>21–27 jul</td><td>Carpa barrio 1 · Reto 1</td><td><b class="warn">ORDEN TEXTIL CONSOLIDADA</b> · ANPD y tesorero</td><td>7</td><td class="num">160</td><td>Bloqueantes de semana 1 cerrados</td></tr>
@@ -2575,7 +2632,7 @@ uniforme se guarda.</p></div>
 <p class="lead">La estructura celular de la Sección 30 define <b>cómo se organiza</b> el Club. Esta tabla define
 <b>qué hace cada quien la semana que viene</b>, cuántas horas dedica y con qué número se le evalúa.</p>
 <div class="body">
-<table class="t-xs">
+<table class="t-xs" style="margin-bottom: 4px;">
 <thead><tr><th style="width:15%">ROL</th><th style="width:7%">N°</th><th style="width:26%">QUÉ HACE EXACTAMENTE</th><th style="width:12%">REPORTA A</th><th style="width:9%">HORAS/SEM</th><th style="width:9%">TIPO</th><th>CÓMO SE LE MIDE</th></tr></thead>
 <tbody>
 <tr><td><b>Dirección del Club</b></td><td class="num">1</td><td>Aprueba piezas y gasto, adjudica cotizaciones, custodia la base de datos, preside Reconocimiento Digital de Voluntariado</td><td>Dirección de campaña</td><td>Dedicación completa</td><td>Pagado</td><td>Registros totales y cumplimiento de la meta de 4.000 votos</td></tr>
@@ -2607,7 +2664,7 @@ se optimiza por compartidos y registros QR generados.</b> Lo que no circula ni r
 <div class="body">
 <div class="g-side" style="gap:18px">
 <div>
-<table class="t-xs">
+<table class="t-xs" style="margin-bottom: 4px;">
 <thead><tr><th style="width:14%">BLOQUE</th><th style="width:32%">INDICADOR</th><th style="width:16%">META SEMANAL</th><th>SI CAE BAJO EL UMBRAL</th></tr></thead>
 <tbody>
 <tr><td rowspan="4"><b>CONTENIDO</b></td><td>Piezas publicadas</td><td class="num">5–7 TikTok</td><td>Se activa el banco de contenido de reserva grabado en activaciones</td></tr>
@@ -2644,7 +2701,7 @@ o no se evalúa.</b></p></div>
 <h1 class="sec sm">Qué puede salir mal y quién responde</h1>
 <div class="rule"></div>
 <div class="body">
-<table class="t-xs">
+<table class="t-xs" style="margin-bottom: 4px;">
 <thead><tr><th style="width:20%">RIESGO</th><th style="width:9%">PROB.</th><th style="width:9%">IMPACTO</th><th style="width:13%">DUEÑO</th><th style="width:26%">MITIGACIÓN PREVENTIVA</th><th>QUÉ SE HACE SI OCURRE</th></tr></thead>
 <tbody>
 <tr style="background:#FFECEC"><td><b>Observación por dádiva</b><br><span style="color:#777">Art. 42 LOP</span></td><td class="warn">MEDIA</td><td class="warn">CRÍTICO</td><td>Dirección del Club</td><td>Todo Tier 2 y 3 sale contra acta con factura bajo S/ 16,00. Ningún bien circula sin registro QR previo. Cinco expedientes abiertos en 2026 ya lo advierten</td><td>Se presenta el expediente completo de actas y facturas. Se suspende toda entrega hasta resolver</td></tr>
@@ -2669,7 +2726,7 @@ desde la primera entrega, y orden textil consolidada antes de que el mercado ele
 <div class="body">
 <div class="g-side" style="gap:18px">
 <div>
-<table class="t-xs">
+<table class="t-xs" style="margin-bottom: 4px;">
 <thead><tr><th style="width:34%">PARTIDA</th><th style="width:12%">UNIDADES</th><th style="width:16%">COSTO UNIT.</th><th style="width:16%">TOTAL</th><th>% DEL TOTAL</th></tr></thead>
 <tbody>
 <tr><td><b>Merch · escenario B</b></td><td>Lote completo</td><td>—</td><td>Confirmado</td><td>39,6%</td></tr>
@@ -2720,7 +2777,7 @@ La pregunta no es si el presupuesto es alto: es qué cuesta no tenerlo.</p></div
 <div class="body" style="padding-bottom: 35px;">
   <div class="g-side" style="gap:18px">
     <div>
-      <table class="t-xs">
+      <table class="t-xs" style="margin-bottom: 4px;">
         <thead><tr><th style="width:50%">ACTIVIDAD</th><th style="width:20%">PESO</th><th style="width:30%">PRESUPUESTO</th></tr></thead>
         <tbody>
           <tr><td><b>Reto del Pollito</b></td><td>8%</td><td>S/ 240</td></tr>
@@ -4610,7 +4667,7 @@ Esa es la disciplina que mantiene el manual coherente entre versiones.</p></div>
 <div class="rule"></div>
 <p class="lead">Lo que este manual no resuelve y alguien debe ejecutar. Un pendiente sin dueño es una excusa futura.</p>
 <div class="body">
-<table class="t-xs">
+<table class="t-xs" style="margin-bottom: 4px;">
 <thead><tr><th style="width:22%">PENDIENTE</th><th style="width:38%">DETALLE</th><th style="width:18%">RESPONSABLE</th><th>PLAZO</th></tr></thead>
 <tbody>
 <tr style="background:#FFECEC"><td><b>Vectorización de la insignia</b></td><td>Vector AI/SVG de las cuatro versiones del emblema nuevo. Bloqueante para toda producción: sin vectores no se envía nada a imprenta</td><td>Brandistry</td><td class="warn">Semana 1 · BLOQUEANTE</td></tr>
